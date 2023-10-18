@@ -18,20 +18,28 @@ const NavBar = () => {
   const links = (
     <>
       <li>
+        <NavLink className="text-lg font-semibold ml-2 text-sky-400" to="/">
+          Home
+        </NavLink>
+      </li>
+      <li>
         <NavLink
-          className="text-lg font-semibold text-orange-400"
+          className="text-lg font-semibold ml-2 text-sky-400"
           to="/addProduct"
         >
           Add Product
         </NavLink>
       </li>
       <li>
-        <NavLink className="text-lg font-semibold text-orange-400" to="/login">
+        <NavLink
+          className="text-lg font-semibold ml-2 text-sky-400"
+          to="/login"
+        >
           Login
         </NavLink>
       </li>
       <li>
-        <NavLink className="text-lg font-semibold text-orange-400" to="/cart">
+        <NavLink className="text-lg font-semibold ml-2 text-sky-400" to="/cart">
           Cart
         </NavLink>
       </li>
@@ -53,10 +61,10 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="flex align-middle items-center">
-          <span className="text-yellow-400">
+          <span className="text-lime-400">
             <DiSpark className="text-7xl"></DiSpark>
           </span>{" "}
-          <span className="text-orange-500 text-2xl">Splash</span>
+          <span className="text-sky-500 text-2xl">Splash</span>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -72,7 +80,7 @@ const NavBar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-orange-400"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-sky-400"
           >
             <li>
               <a>Profile</a>

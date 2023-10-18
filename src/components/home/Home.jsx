@@ -38,8 +38,8 @@ const Home = () => {
       </div>
 
       {/* brands here  */}
-      <h2 className="text-orange-500 text-4xl mb-10">
-        Check Out Our <span className="text-yellow-400">Brands</span>
+      <h2 className="text-sky-500 text-4xl mb-10">
+        Check Out Our <span className="text-lime-400">Brands</span>
       </h2>
       <div className="grid grid-cols-3 gap-5">
         {brands.map((brand) => (
@@ -48,28 +48,27 @@ const Home = () => {
           </Link>
         ))}
       </div>
-      <button className="btn btn-secondary mx-auto mt-5 hover:">
-        See More
-      </button>
+      <button className="btn btn-success mx-auto mt-5 hover:">See More</button>
 
       {/* hot deals section  */}
-      <div className="mt-10 mb-10 text-center">
-        <h2 className="text-orange-500 text-4xl">
-          Hot <span className="text-yellow-400">Deals!</span>
+      <div className="mt-10 mb-10 text-center relative">
+        <h2 className="text-sky-500 text-4xl">
+          Hot <span className="text-lime-400">Deals!</span>
           <img className="mx-auto rounded-3xl mt-5 " src={hot} alt="" />
         </h2>
-        <button className="btn btn-secondary mx-auto mt-5 hover:">
+        <button className="btn btn-accent mx-auto mt-5 hover: ">
           Shop Now
         </button>
       </div>
 
       {/* most sells here  */}
+      <h2 className="text-sky-500 text-4xl mb-10">
+        Our <span className="text-lime-400">Top Sells!</span>
+      </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {<Sells sells={sells}></Sells>}
       </div>
-      <button className="btn btn-secondary mx-auto mt-5 hover:">
-        See More
-      </button>
+      <button className="btn btn-success mx-auto mt-5 hover:">See More</button>
     </div>
   );
 };

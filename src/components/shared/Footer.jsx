@@ -11,10 +11,10 @@ const Footer = () => {
       <footer className="footer footer-center p-10 bg-base-200">
         <aside>
           <div className="flex align-middle items-center">
-            <span className="text-yellow-400">
+            <span className="text-lime-400">
               <DiSpark className="text-7xl"></DiSpark>
             </span>{" "}
-            <span className="text-orange-500 text-2xl">Splash</span>
+            <span className="text-sky-500 text-2xl">Splash</span>
           </div>
           <p className="font-bold text-xl">
             Providing reliable tech since 1992

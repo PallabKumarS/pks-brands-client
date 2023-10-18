@@ -13,11 +13,11 @@ const Sells = ({ sells }) => {
           className="w-60 h-60 mx-auto rounded-3xl"
         />
         <div className="md:p-6">
-          <h2 className="text-xl text-orange-500 font-semibold text-center">
+          <h2 className="text-xl text-sky-500 font-semibold text-center">
             {sell.name}
           </h2>
           <p className="mt-5 text-lg font-medium">
-            Sold Product : <span className="text-orange-500">{sell.sold}</span>
+            Sold Product : <span className="text-sky-500">{sell.sold}</span>
           </p>
         </div>
       </div>
