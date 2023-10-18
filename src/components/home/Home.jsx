@@ -5,9 +5,13 @@ import img2 from "../../assets/banner2.jpg";
 import Brands from "./Brands";
 import Slider from "../shared/Slider";
 import { useEffect, useState } from "react";
+import hot from "../../assets/hot deals.webp";
+import Sells from "./Sells";
 
 const Home = () => {
   const [brands, setBrands] = useState([]);
+  const [sells, setSells] = useState([]);
+
   const images = { img1, img2 };
 
   useEffect(() => {
@@ -15,6 +19,14 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => {
         setBrands(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("/sells.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setSells(data);
       });
   }, []);
 
@@ -36,10 +48,28 @@ const Home = () => {
           </Link>
         ))}
       </div>
-      <button className="btn btn-secondary mx-auto mt-5">See More</button>
+      <button className="btn btn-secondary mx-auto mt-5 hover:">
+        See More
+      </button>
 
       {/* hot deals section  */}
-      <div className="mt-10"></div>
+      <div className="mt-10 mb-10 text-center">
+        <h2 className="text-orange-500 text-4xl">
+          Hot <span className="text-yellow-400">Deals!</span>
+          <img className="mx-auto rounded-3xl mt-5 " src={hot} alt="" />
+        </h2>
+        <button className="btn btn-secondary mx-auto mt-5 hover:">
+          Shop Now
+        </button>
+      </div>
+
+      {/* most sells here  */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {<Sells sells={sells}></Sells>}
+      </div>
+      <button className="btn btn-secondary mx-auto mt-5 hover:">
+        See More
+      </button>
     </div>
   );
 };

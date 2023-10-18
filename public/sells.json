@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 13 Pro",
+    "image_url": "https://images2.imgbox.com/a0/32/Od09pwqt_o.png",
+    "category": "sold",
+    "sold": 750
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S21",
+    "image_url": "https://images2.imgbox.com/9c/12/4e3XxBVI_o.png",
+    "category": "sold",
+    "sold": 650
+  },
+  {
+    "id": 3,
+    "name": "Google Pixel 8 Pro",
+    "image_url": "https://images2.imgbox.com/8a/59/H0V11D0X_o.png",
+    "category": "sold",
+    "sold": 550
+  },
+  {
+    "id": 4,
+    "name": "OnePlus 10 Pro",
+    "image_url": "https://images2.imgbox.com/a6/05/I6wuNSAz_o.png",
+    "category": "sold",
+    "sold": 700
+  },
+  {
+    "id": 5,
+    "name": "Asus Zenfone 10",
+    "image_url": "https://images2.imgbox.com/f8/ff/LKV7LABx_o.png",
+    "category": "sold",
+    "sold": 800
+  },
+  {
+    "id": 6,
+    "name": "Xiaomi 13T Pro",
+    "image_url": "https://images2.imgbox.com/c7/b1/aMlGh9HG_o.png",
+    "category": "sold",
+    "sold": 600
+  }
+]
