@@ -19,7 +19,8 @@ const Login = () => {
     const password = form.get("password");
 
     logIn(email, password)
-      .then(() => {
+      .then((result) => {
+        console.log(result);
         navigate(location?.state ? location.state : "/");
         handleAlert("success", "User LoggedIn Successfully");
       })

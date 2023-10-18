@@ -1,10 +1,11 @@
-import { NavLink } from "react-router-dom";
-import user from "../../assets/user.jpg";
-import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import userLogo from "../../assets/user.jpg";
+import { useContext, useEffect, useState } from "react";
 import { BiSolidMoon } from "react-icons/bi";
 import { BsSun } from "react-icons/bs";
 import { AiOutlineMenu } from "react-icons/ai";
 import { DiSpark } from "react-icons/di";
+import { AuthContext } from "../provider/AuthProvider";
 
 const NavBar = () => {
   const [theme, setTheme] = useState("dark");
@@ -14,6 +15,8 @@ const NavBar = () => {
   useEffect(() => {
     document.querySelector("html").setAttribute("data-theme", theme);
   }, [theme]);
+
+  const { user, logOut } = useContext(AuthContext);
 
   const links = (
     <>
@@ -72,25 +75,30 @@ const NavBar = () => {
       </div>
 
       <div className="navbar-end">
-        <div className="dropdown dropdown-end mr-3">
+        {user ? (
+          <button onClick={logOut} className="btn btn-sm btn-success">
+            LogOut
+          </button>
+        ) : (
+          <Link to="/login">
+            <button className="btn btn-sm btn-success">Login</button>
+          </Link>
+        )}
+        <div className="dropdown dropdown-end mr-3 ml-3">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img src={user} alt="" />
+              {user.photoURL ? (
+                <img src={user.photoURL} alt="userPhoto"></img>
+              ) : (
+                <img src={userLogo} alt="" />
+              )}
             </div>
           </label>
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-sky-400"
           >
-            <li>
-              <a>Profile</a>
-            </li>
-            <li>
-              <a>Settings</a>
-            </li>
-            <li>
-              <a>Logout</a>
-            </li>
+            <li>{user ? <a>{user.displayName}</a> : <a>User Name</a>}</li>
           </ul>
         </div>
         <div>

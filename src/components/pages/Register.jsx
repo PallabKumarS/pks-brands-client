@@ -12,11 +12,11 @@ const Register = () => {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    const form = new FormData(e.currentTarget);
-    const name = form.get("name");
-    const photo = form.get("photo");
-    const email = form.get("email");
-    const password = form.get("password");
+    const form = e.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
 
     if (password.length < 6) {
       handleAlert(
@@ -50,6 +50,7 @@ const Register = () => {
       .catch((error) => {
         handleAlert("error", `${error.message}`);
       });
+
     form.reset();
   };
 
