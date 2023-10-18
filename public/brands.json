@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Samsung",
+    "logo": "/1.svg",
+    "img1": "https://images2.imgbox.com/9b/86/NRy9gQNj_o.jpg",
+    "img2": "https://images2.imgbox.com/b0/59/QgqWsOVt_o.jpg",
+    "img3": "https://images2.imgbox.com/ba/e9/hc8JJwzV_o.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Oneplus",
+    "logo": "/2.svg",
+    "img1": "https://images2.imgbox.com/86/c6/O0OKQQfX_o.jpg",
+    "img2": "https://images2.imgbox.com/02/b9/0elUVeSQ_o.jpg",
+    "img3": "https://images2.imgbox.com/96/c2/ASVoF4zj_o.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Pixel",
+    "logo": "/3.svg",
+    "img1": "https://images2.imgbox.com/07/ee/4nkiHj8x_o.jpg",
+    "img2": "https://images2.imgbox.com/91/39/9EBWanV0_o.jpg",
+    "img3": "https://images2.imgbox.com/c8/5f/Jt0kLZUK_o.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Xiaomi",
+    "logo": "/4.svg",
+    "img1": "https://images2.imgbox.com/37/18/7hoitD09_o.jpg",
+    "img2": "https://images2.imgbox.com/62/f3/oBSGzmzu_o.jpg",
+    "img3": "https://images2.imgbox.com/f3/32/NwCOZ0E4_o.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Apple",
+    "logo": "/5.svg",
+    "img1": "https://images2.imgbox.com/f6/36/7i6qJLcU_o.jpg",
+    "img2": "https://images2.imgbox.com/80/1f/2JQTzi6F_o.jpg",
+    "img3": "https://images2.imgbox.com/e2/b7/ltDXSrpL_o.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Realme",
+    "logo": "/6.svg",
+    "img1": "https://i.ibb.co/yNt6pmb/realme-c55.jpg",
+    "img2": "https://i.ibb.co/yF7NdYg/realme-gt3.jpg",
+    "img3": "https://i.ibb.co/NVGYNWP/realme-11-pro.jpg"
+  }
+]
