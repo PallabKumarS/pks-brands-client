@@ -3,7 +3,7 @@ import "keen-slider/keen-slider.min.css";
 import PropTypes from "prop-types";
 
 const Slider = ({ images }) => {
-  const { img1, img2, img3, img4 } = images;
+  const { img1, img2, img3 } = images;
 
   const [sliderRef] = useKeenSlider(
     {
@@ -42,39 +42,32 @@ const Slider = ({ images }) => {
   );
 
   return (
-    <div ref={sliderRef} className=" keen-slider container mx-auto">
+    <div
+      ref={sliderRef}
+      className=" keen-slider container mx-auto h-[300px] md:h-[500px] lg:h-[800px]"
+    >
       <div className="keen-slider__slide number-slide1">
         <img
-          className="mx-auto rounded-3xl max-h-[300px] md:max-h-[500px] lg:max-h-[700px] lg:w-3/4 px-4"
+          className="mx-auto  h-[300px] md:h-[500px] lg:h-[800px] px-4"
           src={img1}
           alt=""
         />
       </div>
       <div className="keen-slider__slide number-slide1">
         <img
-          className="mx-auto rounded-3xl max-h-[300px] md:max-h-[500px] lg:max-h-[700px] lg:w-3/4 px-4"
+          className="mx-auto  h-[300px] md:h-[500px] lg:h-[800px] px-4"
           src={img2}
           alt=""
         />
       </div>
-      {img3 && (
-        <div className="keen-slider__slide number-slide1">
-          <img
-            className="mx-auto rounded-3xl max-h-[300px] md:max-h-[500px] lg:max-h-[700px] lg:w-3/4 px-4"
-            src={img3}
-            alt=""
-          />
-        </div>
-      )}
-      {img4 && (
-        <div className="keen-slider__slide number-slide1">
-          <img
-            className="mx-auto rounded-3xl max-h-[300px] md:max-h-[500px] lg:max-h-[700px] lg:w-3/4 px-4"
-            src={img4}
-            alt=""
-          />
-        </div>
-      )}
+
+      <div className="keen-slider__slide number-slide1">
+        <img
+          className="mx-auto  h-[300px] md:h-[500px] lg:h-[800px] px-4"
+          src={img3}
+          alt=""
+        />
+      </div>
     </div>
   );
 };

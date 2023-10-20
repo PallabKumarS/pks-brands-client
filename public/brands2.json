@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Samsung",
+    "logo": "/1.svg",
+    "img1": "https://fdn.gsmarena.com/imgroot/reviews/23/samsung-galaxy-tab-s9-ultra/-1220x526/gsmarena_002.jpg",
+    "img2": "https://fdn.gsmarena.com/imgroot/reviews/23/samsung-galaxy-z-fold5/-1220x526/gsmarena_001.jpg",
+    "img3": "https://fdn.gsmarena.com/imgroot/reviews/23/samsung-galaxy-z-flip5/-1220x526/gsmarena_004.jpg"
+  },
+  {
+    "id": 2,
+    "name": "OnePlus",
+    "logo": "/2.svg",
+    "img1": "https://images2.imgbox.com/86/c6/O0OKQQfX_o.jpg",
+    "img2": "https://images2.imgbox.com/02/b9/0elUVeSQ_o.jpg",
+    "img3": "https://images2.imgbox.com/96/c2/ASVoF4zj_o.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Pixel",
+    "logo": "/3.svg",
+    "img1": "https://fdn.gsmarena.com/imgroot/reviews/23/pixel-8-pixel-8-pro-handson/-1220x526/gsmarena_001.jpg",
+    "img2": "https://fdn.gsmarena.com/imgroot/reviews/23/google-pixel-7a/hands-on/-1220x526/gsmarena_100.jpg",
+    "img3": "https://fdn.gsmarena.com/imgroot/reviews/23/google-pixel-7a/review/-1220x526/gsmarena_002.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Xiaomi",
+    "logo": "/4.svg",
+    "img1": "https://fdn.gsmarena.com/imgroot/reviews/23/xiaomi-13-pro-long-term/-1220x526/gsmarena_001.jpg",
+    "img2": "https://fdn.gsmarena.com/imgroot/reviews/23/xiaomi-redmi-12-5g/-1220x526/gsmarena_001.jpg",
+    "img3": "https://fdn.gsmarena.com/imgroot/reviews/23/xiaomi-13t-pro/-1220x526/gsmarena_000.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Apple",
+    "logo": "/5.svg",
+    "img1": "https://fdn.gsmarena.com/imgroot/reviews/23/apple-iphone-15-pro-max/-1220x526/gsmarena_003.jpg",
+    "img2": "https://fdn.gsmarena.com/imgroot/reviews/23/apple-iphone-15-pro/-1220x526/gsmarena_004.jpg",
+    "img3": "https://fdn.gsmarena.com/imgroot/reviews/23/iphone-15-plus/-1220x526/gsmarena_000.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Realme",
+    "logo": "/6.svg",
+    "img1": "https://fdn.gsmarena.com/imgroot/reviews/23/realme-gt3/-1220x526/gsmarena_000.jpg",
+    "img2": "https://fdn.gsmarena.com/imgroot/reviews/23/realme-c55/-1220x526/gsmarena_002.jpg",
+    "img3": "https://fdn.gsmarena.com/imgroot/reviews/23/realme-11-pro/-1220x526/gsmarena_001.jpg"
+  }
+]

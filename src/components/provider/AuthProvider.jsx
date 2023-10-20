@@ -16,6 +16,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [brands, setBrands] = useState([]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -25,6 +26,16 @@ const AuthProvider = ({ children }) => {
     return () => {
       unsubscribe();
     };
+  }, []);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch("/brands2.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setBrands(data);
+        setLoading(false);
+      });
   }, []);
 
   const provider = new GoogleAuthProvider();
@@ -64,11 +75,21 @@ const AuthProvider = ({ children }) => {
     logIn,
     logOut,
     googleLogIn,
+    brands,
+    setLoading,
   };
 
-  return (
-    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
-  );
+  if (loading) {
+    return (
+      <div className="container mx-auto mt-10 text-center">
+        <span className="loading loading-bars loading-lg"></span>
+      </div>
+    );
+  } else {
+    return (
+      <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+    );
+  }
 };
 
 AuthProvider.propTypes = {

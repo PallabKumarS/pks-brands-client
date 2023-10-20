@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 const Sells = ({ sells }) => {
   const sortedSells = sells.sort((a, b) => b.sold - a.sold);
 
-  return sortedSells.map((sell) => (
-    <div className="text-center">
+  return sortedSells.map((sell, idx) => (
+    <div key={idx} className="text-center">
       <div className="rounded-xl border border-base-200 bg-base-200 p-5">
         <img
           src={sell.image_url}
@@ -26,7 +26,7 @@ const Sells = ({ sells }) => {
 };
 
 Sells.propTypes = {
-  sells: PropTypes.arrayOf,
+  sells: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Sells;

@@ -8,7 +8,8 @@ import { updateProfile } from "firebase/auth";
 const Register = () => {
   const [show, setShow] = useState(false);
 
-  const { handleAlert, googleLogIn, createUser } = useContext(AuthContext);
+  const { handleAlert, googleLogIn, createUser, setLoading } =
+    useContext(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -49,6 +50,7 @@ const Register = () => {
 
       .catch((error) => {
         handleAlert("error", `${error.message}`);
+        setLoading(false);
       });
 
     form.reset();
@@ -61,6 +63,7 @@ const Register = () => {
       })
       .catch((error) => {
         handleAlert("error", `${error.message}`);
+        setLoading(false);
       });
   };
 

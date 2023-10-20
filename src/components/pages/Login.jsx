@@ -7,7 +7,8 @@ import { AuthContext } from "../provider/AuthProvider";
 const Login = () => {
   const [show, setShow] = useState(false);
 
-  const { handleAlert, googleLogIn, logIn } = useContext(AuthContext);
+  const { handleAlert, googleLogIn, logIn, setLoading } =
+    useContext(AuthContext);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -26,6 +27,7 @@ const Login = () => {
       })
       .catch((error) => {
         handleAlert("error", `${error.message}`);
+        setLoading(false);
       });
   };
 
@@ -36,12 +38,13 @@ const Login = () => {
       })
       .catch((error) => {
         handleAlert("error", `${error.message}`);
+        setLoading(false);
       });
   };
 
   return (
     <div className="bg-base-200 py-5 md:w-1/2 mx-auto mt-10 relative text-center mb-10 px-3">
-      <h2 className="text-3xl mt-5 mb-5 text-lime-500">Please Register Here</h2>
+      <h2 className="text-3xl mt-5 mb-5 text-lime-500">Please Login Here</h2>
 
       <form onSubmit={handleLogIn}>
         <input

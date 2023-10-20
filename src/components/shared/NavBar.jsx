@@ -63,12 +63,14 @@ const NavBar = () => {
             {links}
           </ul>
         </div>
-        <div className="flex align-middle items-center">
-          <span className="text-lime-400">
-            <DiSpark className="text-7xl"></DiSpark>
-          </span>{" "}
-          <span className="text-sky-500 text-2xl">Splash</span>
-        </div>
+        <Link to="/">
+          <div className="flex flex-col md:flex-row items-center">
+            <span className="text-lime-400">
+              <DiSpark className="text-7xl"></DiSpark>
+            </span>{" "}
+            <span className="text-sky-500 text-2xl">Splash</span>
+          </div>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -87,7 +89,7 @@ const NavBar = () => {
         <div className="dropdown dropdown-end mr-3 ml-3">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              {user.photoURL ? (
+              {user?.photoURL ? (
                 <img src={user.photoURL} alt="userPhoto"></img>
               ) : (
                 <img src={userLogo} alt="" />

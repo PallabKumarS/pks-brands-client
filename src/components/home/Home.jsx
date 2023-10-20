@@ -2,25 +2,20 @@
 import { Link } from "react-router-dom";
 import img1 from "../../assets/banner1.jpg";
 import img2 from "../../assets/banner2.jpg";
+import img3 from "../../assets/banner3.jpg";
 import Brands from "./Brands";
 import Slider from "../shared/Slider";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import hot from "../../assets/hot deals.webp";
 import Sells from "./Sells";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Home = () => {
-  const [brands, setBrands] = useState([]);
   const [sells, setSells] = useState([]);
 
-  const images = { img1, img2 };
+  const { brands } = useContext(AuthContext);
 
-  useEffect(() => {
-    fetch("/brands.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setBrands(data);
-      });
-  }, []);
+  const images = { img1, img2, img3 };
 
   useEffect(() => {
     fetch("/sells.json")
@@ -43,8 +38,8 @@ const Home = () => {
       </h2>
       <div className="grid grid-cols-3 gap-5">
         {brands.map((brand) => (
-          <Link to={`/${brand.name}`}>
-            <Brands key={brand.id} brand={brand}></Brands>
+          <Link key={brand.id} to={`/products/${brand.name.toLowerCase()}`}>
+            <Brands brand={brand}></Brands>
           </Link>
         ))}
       </div>

@@ -7,8 +7,8 @@ const AddProduct = () => {
   const handleAddProduct = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.productName.value;
-    const brand = form.brandName.value;
+    const name = form.product.value;
+    const brand = form.brand.value;
     const type = form.type.value;
     const price = form.price.value;
     const description = form.description.value;
@@ -25,7 +25,7 @@ const AddProduct = () => {
       photo,
     };
 
-    fetch("http://localhost:5000/product", {
+    fetch("http://localhost:5000/products", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(newProduct),
@@ -41,7 +41,7 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-2">
       <h2 className="text-3xl text-indigo-500 mb-5 font-bold">
         Add Product page
       </h2>
@@ -59,8 +59,9 @@ const AddProduct = () => {
           <input
             className="input input-bordered mt-1 w-full"
             type="text"
-            name="productName"
+            name="product"
             placeholder="Product Name"
+            required
           />
         </div>
 
@@ -82,7 +83,7 @@ const AddProduct = () => {
             <option value="samsung">Samsung</option>
             <option value="pixel">Pixel</option>
             <option value="xiaomi">Xiaomi</option>
-            <option value="onePlus">OnePlus</option>
+            <option value="oneplus">OnePlus</option>
             <option value="realme">Realme</option>
           </select>
         </div>
@@ -97,6 +98,7 @@ const AddProduct = () => {
             type="text"
             name="type"
             placeholder="Type"
+            required
           />
         </div>
 
@@ -110,6 +112,7 @@ const AddProduct = () => {
             type="text"
             name="price"
             placeholder="Price"
+            required
           />
         </div>
 
@@ -123,6 +126,7 @@ const AddProduct = () => {
             type="text"
             name="description"
             placeholder="Short Description"
+            required
           />
         </div>
 
@@ -131,12 +135,22 @@ const AddProduct = () => {
             Rating
           </label>
           <br />
-          <input
-            className="input input-bordered mt-1 w-full"
-            type="text"
-            name="Rating"
-            placeholder="Rating"
-          />
+          <select
+            name="rating"
+            className="select select-bordered w-full"
+            defaultValue=""
+            required
+          >
+            <option disabled value="">
+              Rating
+            </option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
         </div>
 
         <div className="col-span-2">
@@ -149,11 +163,12 @@ const AddProduct = () => {
             type="text"
             name="photo"
             placeholder="Photo URL"
+            required
           />
         </div>
 
         <input
-          className="mt-3 btn btn-block col-span-2"
+          className="mt-5 btn btn-active col-span-2 text-lime-700"
           type="submit"
           value="Add Product"
         />
