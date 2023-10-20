@@ -20,7 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch(`http://localhost:5000/products`),
+        loader: () =>
+          fetch(
+            `https://pks-brands-server-npgdlp55q-pallab-kumar-sarkers-projects.vercel.app/products`
+          ),
       },
       {
         path: "/addProduct",
@@ -45,13 +48,18 @@ const router = createBrowserRouter([
             <Cart></Cart>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/cart"),
+        loader: () =>
+          fetch(
+            "https://pks-brands-server-npgdlp55q-pallab-kumar-sarkers-projects.vercel.app/cart"
+          ),
       },
       {
         path: "/products/:id",
         element: <BrandDetails></BrandDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.id}`),
+          fetch(
+            `https://pks-brands-server-npgdlp55q-pallab-kumar-sarkers-projects.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/products/:brand/details/:id",
@@ -61,7 +69,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/brand/${params.id}`),
+          fetch(
+            `https://pks-brands-server-npgdlp55q-pallab-kumar-sarkers-projects.vercel.app/products/brand/${params.id}`
+          ),
       },
       {
         path: "/products/:brand/update/:id",
@@ -71,7 +81,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/brand/${params.id}`),
+          fetch(
+            `https://pks-brands-server-npgdlp55q-pallab-kumar-sarkers-projects.vercel.app/products/brand/${params.id}`
+          ),
       },
     ],
   },

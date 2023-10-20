@@ -34,14 +34,6 @@ const NavBar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink
-          className="text-lg font-semibold ml-2 text-sky-400"
-          to="/login"
-        >
-          Login
-        </NavLink>
-      </li>
-      <li>
         <NavLink className="text-lg font-semibold ml-2 text-sky-400" to="/cart">
           Cart
         </NavLink>

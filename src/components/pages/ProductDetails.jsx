@@ -27,11 +27,14 @@ const ProductDetails = () => {
       rating,
       photo,
     };
-    fetch("http://localhost:5000/cart", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(product),
-    })
+    fetch(
+      "https://pks-brands-server-npgdlp55q-pallab-kumar-sarkers-projects.vercel.app/cart",
+      {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(product),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

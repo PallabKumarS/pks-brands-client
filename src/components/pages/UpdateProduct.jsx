@@ -28,11 +28,14 @@ const UpdateProduct = () => {
       photo,
     };
 
-    fetch(`http://localhost:5000/products/brand/${_id}`, {
-      method: "PUT",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(updatedProduct),
-    })
+    fetch(
+      `https://pks-brands-server-npgdlp55q-pallab-kumar-sarkers-projects.vercel.app/products/brand/${_id}`,
+      {
+        method: "PUT",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(updatedProduct),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
