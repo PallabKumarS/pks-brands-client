@@ -74,7 +74,7 @@ const ProductDetails = () => {
           </p>
           <div className="mt-5 mb-5 text-center">
             <button onClick={handleAddToCart} className="btn btn-primary">
-              Add To Card
+              Add To Cart
             </button>
             <Rating
               style={{ maxWidth: 150 }}

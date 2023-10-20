@@ -39,7 +39,7 @@ const Rated = ({ products }) => {
                   {product.name}
                 </h2>
                 <p className="mt-5 text-lg font-medium text-lime-600">
-                  Sold Product :{" "}
+                  Price :{product.price}
                 </p>
                 <Rating
                   style={{ maxWidth: 150 }}
