@@ -19,6 +19,14 @@ const Rated = ({ products }) => {
     handleAlert("warning", "No More Data Available");
   }
 
+  const handleShow = () => {
+    if (load < products.length) {
+      setShow(!show);
+    } else {
+      handleAlert("warning", "No More Data Available");
+    }
+  };
+
   const sortedProducts = products.sort((a, b) => b.rating - a.rating);
 
   const displayProducts = show ? sortedProducts : sortedProducts.slice(0, load);
@@ -39,7 +47,7 @@ const Rated = ({ products }) => {
                   {product.name}
                 </h2>
                 <p className="mt-5 text-lg font-medium text-lime-600">
-                  Price :{product.price}
+                  Price :{product.price}$
                 </p>
                 <Rating
                   style={{ maxWidth: 150 }}
@@ -53,7 +61,7 @@ const Rated = ({ products }) => {
         ))}
       </div>
       <div className="flex justify-center gap-5">
-        <button onClick={() => setShow(!show)} className="btn btn-success mt-5">
+        <button onClick={() => handleShow()} className="btn btn-success mt-5">
           {show ? <span>Show Less</span> : <span>Show All</span>}
         </button>
         <button

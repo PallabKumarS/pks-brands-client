@@ -117,7 +117,7 @@ const UpdateProduct = () => {
           <br />
           <input
             className="input input-bordered mt-1 w-full"
-            type="text"
+            type="number"
             name="price"
             placeholder="Price"
             defaultValue={price}
