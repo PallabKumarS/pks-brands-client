@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import img1 from "../../assets/banner1.jpg";
 import img2 from "../../assets/banner2.jpg";
 import img3 from "../../assets/banner3.jpg";
@@ -9,9 +9,13 @@ import { useContext, useEffect, useState } from "react";
 import hot from "../../assets/hot deals.webp";
 import Sells from "./Sells";
 import { AuthContext } from "../provider/AuthProvider";
+import Rated from "./Rated";
 
 const Home = () => {
   const [sells, setSells] = useState([]);
+
+  const products = useLoaderData();
+  console.log(products);
 
   const { brands } = useContext(AuthContext);
 
@@ -33,7 +37,7 @@ const Home = () => {
       </div>
 
       {/* brands here  */}
-      <h2 className="text-sky-500 text-4xl mb-10">
+      <h2 className="text-sky-500 text-4xl mb-10 font-bold">
         Check Out Our <span className="text-lime-400">Brands</span>
       </h2>
       <div className="grid grid-cols-3 gap-5">
@@ -47,7 +51,7 @@ const Home = () => {
 
       {/* hot deals section  */}
       <div className="mt-10 mb-10 text-center relative">
-        <h2 className="text-sky-500 text-4xl">
+        <h2 className="text-sky-500 text-4xl font-bold">
           Hot <span className="text-lime-400">Deals!</span>
           <img className="mx-auto rounded-3xl mt-5 " src={hot} alt="" />
         </h2>
@@ -57,13 +61,20 @@ const Home = () => {
       </div>
 
       {/* most sells here  */}
-      <h2 className="text-sky-500 text-4xl mb-10">
+      <h2 className="text-sky-500 text-4xl mb-10 font-bold">
         Our <span className="text-lime-400">Top Sells!</span>
       </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
         {<Sells sells={sells}></Sells>}
       </div>
       <button className="btn btn-success mx-auto mt-5 hover:">See More</button>
+
+      <div>
+        <h2 className="text-sky-500 text-4xl mb-10 font-bold mt-10">
+          Our <span className="text-lime-400">Top Rated</span> Products
+        </h2>
+        {<Rated products={products}></Rated>}
+      </div>
     </div>
   );
 };

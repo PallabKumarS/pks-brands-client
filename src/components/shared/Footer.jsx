@@ -14,23 +14,23 @@ const Footer = () => {
             <span className="text-lime-400">
               <DiSpark className="text-7xl"></DiSpark>
             </span>{" "}
-            <span className="text-sky-500 text-2xl">Splash</span>
+            <span className="text-sky-500 text-2xl font-semibold">Splash</span>
           </div>
-          <p className="font-bold text-xl">
-            Providing reliable tech since 1992
+          <p className="font-bold text-2xl text-sky-500">
+            Providing Reliable Tech Since 2014
           </p>
-          <p>Copyright © 2023 - All right reserved</p>
+          <p className="text-lime-700 text-lg">Copyright © 2023 - All right reserved</p>
         </aside>
         <nav>
           <div className="grid grid-flow-col gap-4">
             <a>
-              <AiOutlineTwitter className="text-3xl"></AiOutlineTwitter>
+              <AiOutlineTwitter className="text-3xl text-purple-600"></AiOutlineTwitter>
             </a>
             <a>
-              <AiOutlineYoutube className="text-3xl"></AiOutlineYoutube>
+              <AiOutlineYoutube className="text-3xl text-purple-600"></AiOutlineYoutube>
             </a>
             <a>
-              <AiOutlineFacebook className="text-3xl"></AiOutlineFacebook>
+              <AiOutlineFacebook className="text-3xl text-purple-600"></AiOutlineFacebook>
             </a>
           </div>
         </nav>

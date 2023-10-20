@@ -68,7 +68,7 @@ const NavBar = () => {
             <span className="text-lime-400">
               <DiSpark className="text-7xl"></DiSpark>
             </span>{" "}
-            <span className="text-sky-500 text-2xl">Splash</span>
+            <span className="text-sky-500 text-2xl font-semibold">Splash</span>
           </div>
         </Link>
       </div>
@@ -107,10 +107,10 @@ const NavBar = () => {
           <label className="swap swap-rotate">
             <input onClick={toggleTheme} type="checkbox" />
             <div className="swap-on">
-              <BiSolidMoon className="text-2xl"></BiSolidMoon>
+              <BiSolidMoon className="text-2xl text-purple-500"></BiSolidMoon>
             </div>
             <div className="swap-off">
-              <BsSun className="text-2xl"></BsSun>
+              <BsSun className="text-2xl text-purple-500"></BsSun>
             </div>
           </label>
         </div>

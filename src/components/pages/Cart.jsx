@@ -16,7 +16,6 @@ const Cart = () => {
   const [items, setItems] = useState(cartItems);
 
   const handleDelete = (id) => {
-    console.log(id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -63,7 +62,7 @@ const Cart = () => {
                 />
               </div>
               <div className="text-center mx-auto">
-                <h2 className="text-2xl text-sky-400 mx-auto">{name}</h2>
+                <h2 className="text-2xl text-sky-400 mx-auto">{item.name}</h2>
                 <h2 className="text-2xl text-lime-400 mx-auto mt-5">
                   Brand : {item.brand.toUpperCase()}
                 </h2>

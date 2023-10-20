@@ -16,7 +16,7 @@ const Sells = ({ sells }) => {
           <h2 className="text-xl text-sky-500 font-semibold text-center">
             {sell.name}
           </h2>
-          <p className="mt-5 text-lg font-medium">
+          <p className="mt-5 text-lg font-medium text-lime-600">
             Sold Product : <span className="text-sky-500">{sell.sold}</span>
           </p>
         </div>
