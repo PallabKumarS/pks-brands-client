@@ -15,7 +15,6 @@ const Home = () => {
   const [sells, setSells] = useState([]);
 
   const products = useLoaderData();
-  console.log(products);
 
   const { brands } = useContext(AuthContext);
 
