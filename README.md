@@ -1,8 +1,11 @@
-# React + Vite
+# Spark Splash
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Live Link : https://pks-brands.web.app/
 
-Currently, two official plugins are available:
+## Project Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- has slider or banner can be add dynamically
+- can fetch data from api or load from json
+- can show data from a server
+- has authentication methods
+- it has private routes and which can not be used without authentication
