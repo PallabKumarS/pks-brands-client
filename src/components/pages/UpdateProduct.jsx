@@ -1,10 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { useLoaderData } from "react-router-dom";
 
-const AddProduct = () => {
+const UpdateProduct = () => {
+  const { _id, name, brand, type, price, rating, photo } = useLoaderData();
+
   const { handleAlert } = useContext(AuthContext);
 
-  const handleAddProduct = (e) => {
+  const handleUpdateProduct = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.product.value;
@@ -15,7 +18,7 @@ const AddProduct = () => {
     const rating = form.rating.value;
     const photo = form.photo.value;
 
-    const newProduct = {
+    const updatedProduct = {
       name,
       brand,
       type,
@@ -25,16 +28,16 @@ const AddProduct = () => {
       photo,
     };
 
-    fetch("http://localhost:5000/products", {
-      method: "POST",
+    fetch(`http://localhost:5000/products/brand/${_id}`, {
+      method: "PUT",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify(newProduct),
+      body: JSON.stringify(updatedProduct),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
-          handleAlert("success", "Added Successfully");
+        if (data.modifiedCount > 0) {
+          handleAlert("success", "Updated Successfully");
         }
       });
     form.reset();
@@ -43,11 +46,11 @@ const AddProduct = () => {
   return (
     <div className="container mx-auto px-2">
       <h2 className="text-3xl text-indigo-500 mb-5 font-bold text-center">
-        Add Product Here
+        Update Product Here
       </h2>
 
       <form
-        onSubmit={handleAddProduct}
+        onSubmit={handleUpdateProduct}
         action=""
         className="bg-base-200 p-5 grid grid-cols-2 justify-center gap-5 rounded-3xl mt-10"
       >
@@ -61,6 +64,7 @@ const AddProduct = () => {
             type="text"
             name="product"
             placeholder="Product Name"
+            defaultValue={name}
             required
           />
         </div>
@@ -73,7 +77,7 @@ const AddProduct = () => {
           <select
             name="brand"
             className="select select-bordered w-full"
-            defaultValue=""
+            defaultValue={brand}
             required
           >
             <option disabled value="">
@@ -98,6 +102,7 @@ const AddProduct = () => {
             type="text"
             name="type"
             placeholder="Type"
+            defaultValue={type}
             required
           />
         </div>
@@ -112,20 +117,22 @@ const AddProduct = () => {
             type="text"
             name="price"
             placeholder="Price"
+            defaultValue={price}
             required
           />
         </div>
 
         <div className="">
           <label className="" htmlFor="">
-            Short Description
+            Photo URL
           </label>
           <br />
           <input
             className="input input-bordered mt-1 w-full"
             type="text"
-            name="description"
-            placeholder="Short Description"
+            name="photo"
+            placeholder="Photo URL"
+            defaultValue={photo}
             required
           />
         </div>
@@ -138,7 +145,7 @@ const AddProduct = () => {
           <select
             name="rating"
             className="select select-bordered w-full"
-            defaultValue=""
+            defaultValue={rating}
             required
           >
             <option disabled value="">
@@ -153,28 +160,14 @@ const AddProduct = () => {
           </select>
         </div>
 
-        <div className="col-span-2">
-          <label className="" htmlFor="">
-            Photo URL
-          </label>
-          <br />
-          <input
-            className="input input-bordered mt-1 w-full"
-            type="text"
-            name="photo"
-            placeholder="Photo URL"
-            required
-          />
-        </div>
-
         <input
           className="mt-5 btn btn-active col-span-2 text-lime-700"
           type="submit"
-          value="Add Product"
+          value="Update Product"
         />
       </form>
     </div>
   );
 };
 
-export default AddProduct;
+export default UpdateProduct;

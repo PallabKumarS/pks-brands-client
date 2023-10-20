@@ -1,5 +1,7 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { Rating, RoundedStar } from "@smastrom/react-rating";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const myStyles = {
   itemShapes: RoundedStar,
@@ -8,13 +10,39 @@ const myStyles = {
 };
 
 const ProductDetails = () => {
-  const { _id, name, brand, type, price, rating, photo, description } =
+  const { handleAlert } = useContext(AuthContext);
+
+  const { name, brand, type, price, rating, photo, description } =
     useLoaderData();
 
   const descriptionParts = description.split(",");
 
+  const handleAddToCart = () => {
+    const product = {
+      name,
+      brand,
+      type,
+      price,
+      description,
+      rating,
+      photo,
+    };
+    fetch("http://localhost:5000/cart", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          handleAlert("success", "Product Added To Cart Successfully");
+        }
+      });
+  };
+
   return (
-    <div className="container mx-auto lg:card-side shadow-xl mt-10 p-4">
+    <div className="container mx-auto shadow-xl mt-10 p-4">
       <div className="flex flex-col lg:flex-row gap-5 bg-base-200 rounded-3xl items-center drop-shadow-xl">
         <div className="mt-5 mx-auto">
           <img
@@ -42,9 +70,9 @@ const ProductDetails = () => {
             Price: ${price}
           </p>
           <div className="mt-5 mb-5 text-center">
-            <Link to={`/cart/${_id}`}>
-              <button className="btn btn-primary mr-5">Add To Card</button>
-            </Link>
+            <button onClick={handleAddToCart} className="btn btn-primary">
+              Add To Card
+            </button>
             <Rating
               style={{ maxWidth: 150 }}
               value={parseInt(rating)}

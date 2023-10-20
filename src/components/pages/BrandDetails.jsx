@@ -4,7 +4,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import Slider from "../shared/Slider";
 import empty from "../../assets/nothing.webp";
-import Product from "./Product";
+import Products from "./Products";
 
 const BrandDetails = () => {
   const [sortedBrands, setSortedBrands] = useState({});
@@ -32,9 +32,9 @@ const BrandDetails = () => {
         Available <span className="text-lime-400">Products</span>
       </h2>
       {products.length > 0 ? (
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 px-4 gap-10">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 px-4 gap-8">
           {products.map((product) => (
-            <Product key={product._id} product={product}></Product>
+            <Products key={product._id} product={product}></Products>
           ))}
         </div>
       ) : (
