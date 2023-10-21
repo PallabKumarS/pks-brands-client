@@ -20,8 +20,7 @@ const Login = () => {
     const password = form.get("password");
 
     logIn(email, password)
-      .then((result) => {
-        console.log(result);
+      .then(() => {
         navigate(location?.state ? location.state : "/");
         handleAlert("success", "User LoggedIn Successfully");
       })
@@ -34,6 +33,7 @@ const Login = () => {
   const handleGoogleLogIn = () => {
     googleLogIn()
       .then(() => {
+        navigate(location?.state ? location.state : "/");
         handleAlert("success", "User LoggedIn Successfully");
       })
       .catch((error) => {
@@ -79,7 +79,7 @@ const Login = () => {
       </form>
 
       <div className="text-center mx-auto mb-3">
-        <p className="mb-2">Or Register Using</p>
+        <p className="mb-2">Or Login Using</p>
         <FcGoogle
           onClick={handleGoogleLogIn}
           className="text-center mx-auto w-10 h-10"

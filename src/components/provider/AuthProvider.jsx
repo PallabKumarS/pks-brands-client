@@ -90,6 +90,9 @@ const AuthProvider = ({ children }) => {
       <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
     );
   }
+  // return (
+  //   <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+  // );
 };
 
 AuthProvider.propTypes = {
