@@ -26,7 +26,7 @@ const AddProduct = () => {
     };
 
     fetch(
-      "https://pks-brands-server-npgdlp55q-pallab-kumar-sarkers-projects.vercel.app/products",
+      "https://pks-brands-server-6cb9dabrz-pallab-kumar-sarkers-projects.vercel.app/products",
       {
         method: "POST",
         headers: { "content-type": "application/json" },

@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         loader: () =>
           fetch(
-            `https://pks-brands-server-npgdlp55q-pallab-kumar-sarkers-projects.vercel.app/products`
+            `https://pks-brands-server-6cb9dabrz-pallab-kumar-sarkers-projects.vercel.app/products`
           ),
       },
       {
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            "https://pks-brands-server-npgdlp55q-pallab-kumar-sarkers-projects.vercel.app/cart"
+            "https://pks-brands-server-6cb9dabrz-pallab-kumar-sarkers-projects.vercel.app/cart"
           ),
       },
       {
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
         element: <BrandDetails></BrandDetails>,
         loader: ({ params }) =>
           fetch(
-            `https://pks-brands-server-npgdlp55q-pallab-kumar-sarkers-projects.vercel.app/products/${params.id}`
+            `https://pks-brands-server-6cb9dabrz-pallab-kumar-sarkers-projects.vercel.app/products/${params.id}`
           ),
       },
       {
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://pks-brands-server-npgdlp55q-pallab-kumar-sarkers-projects.vercel.app/products/brand/${params.id}`
+            `https://pks-brands-server-6cb9dabrz-pallab-kumar-sarkers-projects.vercel.app/products/brand/${params.id}`
           ),
       },
       {
@@ -82,7 +82,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://pks-brands-server-npgdlp55q-pallab-kumar-sarkers-projects.vercel.app/products/brand/${params.id}`
+            `https://pks-brands-server-6cb9dabrz-pallab-kumar-sarkers-projects.vercel.app/products/brand/${params.id}`
           ),
       },
     ],

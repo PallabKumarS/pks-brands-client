@@ -27,7 +27,7 @@ const Cart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://pks-brands-server-npgdlp55q-pallab-kumar-sarkers-projects.vercel.app/cart/${id}`,
+          `https://pks-brands-server-6cb9dabrz-pallab-kumar-sarkers-projects.vercel.app/cart/${id}`,
           {
             method: "DELETE",
           }
