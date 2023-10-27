@@ -14,7 +14,6 @@ const UpdateProduct = () => {
     const brand = form.brand.value;
     const type = form.type.value;
     const price = form.price.value;
-    const description = form.description.value;
     const rating = form.rating.value;
     const photo = form.photo.value;
 
@@ -23,7 +22,6 @@ const UpdateProduct = () => {
       brand,
       type,
       price,
-      description,
       rating,
       photo,
     };
