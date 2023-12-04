@@ -4,8 +4,8 @@
 
 ## Project Features
 
-- has slider or banner can be add dynamically
+- has slider or banner can be added dynamically
 - can fetch data from api or load from json
-- can show data from a server
-- has authentication methods
 - it has private routes and which can not be used without authentication
+- has authentication methods with jwt
+- has sorting and searching functions
